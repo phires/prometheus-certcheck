@@ -1,6 +1,5 @@
 #!/bin/sh
 
-[ ! -f /conf/hosts ] && touch /conf/hosts
+[ ! -f /config/hosts ] && echo No /config/hosts file!
 
-echo Polling every $INTERVAL minutes
-/prometheus-certcheck -hosts /conf/hosts -interval $INTERVAL -web.address $ADDRESS -web.telemetry-path $METRICSPATH
+/prometheus-certcheck -hosts /config/hosts -interval $INTERVAL -web.address $ADDRESS -web.telemetry-path $METRICSPATH

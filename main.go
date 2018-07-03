@@ -113,5 +113,4 @@ func main() {
 	}
 
 	timer <- true
-
 }

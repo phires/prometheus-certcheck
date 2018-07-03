@@ -14,7 +14,8 @@ ENV INTERVAL 60
 ENV ADDRESS :8080
 ENV METRICSPATH /metrics
 
-RUN mkdir -p /conf
+RUN mkdir -p /config \
+    && apk --no-cache add ca-certificates
 COPY --from=builder /go/src/github.com/phires/prometheus-certcheck/prometheus-certcheck /prometheus-certcheck
 COPY entrypoint.sh /entrypoint.sh
 
